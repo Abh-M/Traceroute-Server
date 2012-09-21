@@ -14,6 +14,7 @@
 #include <string.h>
 #include "Globals.h"
 #include <arpa/inet.h>
+#include <stdlib.h>
 using namespace std;
 
 class Command {

@@ -19,7 +19,7 @@
 
 int remCon=0;
 int maxCon;
-sem_t *mutex;
+sem_t mutex;
 
 typedef struct connectionDetails {
     int connFD;
@@ -81,7 +81,7 @@ void *countdown(void *arg)
     double diff = difftime(time(NULL), details.startTime);
     while (diff<TIMEOUT_INTERVAL) {
         diff = difftime(time(NULL), details.startTime);
-        cout<<"\n Diff "<<diff;
+        cout<<"\n Diff..... "<<diff<<"...."<<details.socketDescriptor;
     }
     
     if(diff>=TIMEOUT_INTERVAL)
@@ -90,13 +90,19 @@ void *countdown(void *arg)
         strcpy(mess, "Connection Time Out");
         sendMessageToClient(mess, details.socketDescriptor);
         close(details.socketDescriptor);
+        
+        sem_wait(&mutex);
+        if(remCon<maxCon)
+            remCon++;
+        cout<<"\n REMAINING CONNECTIONS : "<<remCon;
+        sem_post(&mutex);
+
         int result = pthread_cancel(details.parentThread);
         if(result==0)
-        {
             automaticTimeOutLog(details.ipAddress, details.port_no);
-            pthread_exit(NULL);
-        }
+        
     }
+    pthread_exit(NULL);
 
     
     //countdown till 30 if the thread is not killed the it will terminate the client connection and the thread
@@ -122,16 +128,16 @@ void *countdown(void *arg)
     strcpy(mess, "\n>>> ");
     sendMessageToClient(mess, connFD);
     
-    pthread_t countdownThread;
-    countdownParams t_params;
-    t_params.socketDescriptor = connFD;
-    t_params.parentThread = pthread_self();
-    strcpy(t_params.ipAddress, ipaddress);
-    t_params.port_no = details.clientAddress.sin_port;
 
-    t_params.startTime = time(NULL);
-    pthread_create(&countdownThread, NULL, countdown, &t_params);
+    pthread_t countThread;
+    countdownParams connDetails;
+    strcpy(connDetails.ipAddress, ipaddress);
+    connDetails.port_no = details.clientAddress.sin_port;
+    connDetails.socketDescriptor = connFD;
+    connDetails.parentThread = pthread_self();
+    connDetails.startTime = time(NULL);
 
+    pthread_create(&countThread, NULL, countdown,(void*)&connDetails);
 
 
     
@@ -143,13 +149,15 @@ void *countdown(void *arg)
         
         cout<<"\n Client "<<connFD<<" : "<<buff;
 
-        if(countdownThread!=NULL)
-            pthread_cancel(countdownThread);
         if(buff==NULL || strlen(buff)<=0){ continue;}
         Command *cmd = new Command(buff);
 
         if(strcmp(cmd->command, "help")==0)
         {
+            //kill previous timer
+            if((pthread_cancel(countThread))!=0)
+                cout<<"\n Cannot kill thread";
+
             //Send help file
             FILE *fp = fopen("/Users/abhineet/Desktop/traceroute/traceroute/help.txt", "r");
 
@@ -163,14 +171,19 @@ void *countdown(void *arg)
 
 
             }
-            if(countdownThread)
-                pthread_cancel(countdownThread);
-            t_params.startTime = time(NULL);
-            pthread_create(&countdownThread, NULL, countdown, &t_params);
+         
+            
+            //start new timer
+            connDetails.startTime = time(NULL);
+            pthread_create(&countThread, NULL, countdown, (void*)&connDetails);
 
         }
         else if(strcmp(cmd->command, "traceroute")==0)
         {
+            //kill previous timer
+            if((pthread_cancel(countThread))!=0)
+                cout<<"\n Cannot kill thread";
+
             
             char *tracerouteCommands[100];
             int totalTracerouteCommands=0;
@@ -277,12 +290,12 @@ void *countdown(void *arg)
                 totalTracerouteCommands--;
                                                   
             }
-        
-            if(countdownThread)
-                pthread_cancel(countdownThread);
+            
+            //start new timer
+            connDetails.startTime = time(NULL);
+            pthread_create(&countThread, NULL, countdown, (void*)&connDetails);
 
-            t_params.startTime = time(NULL);
-            pthread_create(&countdownThread, NULL, countdown, &t_params);
+        
 
 
         }
@@ -301,9 +314,11 @@ void *countdown(void *arg)
             else
                 cout<<"\n Error closing client"<<connFD;
             
-            sem_wait(mutex);
-            remCon = (remCon+1==maxCon)?maxCon:++remCon;
-            sem_post(mutex);
+            sem_wait(&mutex);
+            remCon = (remCon+1>=maxCon)?maxCon:++remCon;
+            cout<<"\n REMAINING CONNECTIONS : "<<remCon;
+
+            sem_post(&mutex);
 
             pthread_exit((void*)&connFD);
 
@@ -311,14 +326,19 @@ void *countdown(void *arg)
         }
         else
         {
+            //kill previous timer
+            if((pthread_cancel(countThread))!=0)
+                cout<<"\n Cannot kill thread";
+
             strcpy(mess, "\nInvalid Command\n");
             sendMessageToClient(mess, connFD);
+            
+            
+            //start new timer
+            connDetails.startTime = time(NULL);
+            pthread_create(&countThread, NULL, countdown, (void*)&connDetails);
 
-            if(countdownThread)
-                pthread_cancel(countdownThread);
 
-            t_params.startTime = time(NULL);
-            pthread_create(&countdownThread, NULL, countdown, &t_params);
 
 
         }
@@ -380,9 +400,11 @@ void Socket::startServerProcess()
             if(connFD!=-1 && remCon>0)
             {
                             
-                sem_wait(mutex);
+                sem_wait(&mutex);
                     remCon--;
-                sem_post(mutex);
+                cout<<"\n REMAINING CONNECTIONS : "<<remCon;
+
+                sem_post(&mutex);
                 
 
                 details.connFD = connFD;
@@ -415,7 +437,7 @@ Socket* Socket::shared()
     
     sharedInstance = (sharedInstance==NULL)?(new Socket()):sharedInstance;
     sharedInstance->totalThreads = 0;
-    sem_init(mutex, 0, 1);
+    sem_init(&mutex, 0, 1);
     return sharedInstance;
 }
 

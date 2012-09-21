@@ -8,7 +8,8 @@
 
 #include "Logger.h"
 #include "Globals.h"
-
+#include <stdlib.h>
+#include <cstring>
 using namespace std;
 FILE *log;
 
