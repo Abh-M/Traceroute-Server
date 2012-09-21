@@ -1,0 +1,353 @@
+
+
+------------------------------------
+09/19/12 14:03:54 : Server started
+09/19/12 14:05:26 : Client Connected | IP: 127.0.0.1 | Port: 48095 
+
+------------------------------------
+09/19/12 14:51:13 : Server started
+09/19/12 14:51:18 : Client Connected | IP: 127.0.0.1 | Port: 46817 
+09/19/12 14:51:35 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 46817 
+
+------------------------------------
+09/19/12 14:53:33 : Server started
+09/19/12 14:53:39 : Client Connected | IP: 127.0.0.1 | Port: 50145 
+
+------------------------------------
+09/19/12 14:55:17 : Server started
+09/19/12 14:55:27 : Client Connected | IP: 127.0.0.1 | Port: 51681 
+
+------------------------------------
+09/19/12 14:57:33 : Server started
+09/19/12 14:57:37 : Client Connected | IP: 127.0.0.1 | Port: 54753 
+09/19/12 14:57:44 : Traceroute sample.txt | from IP: 127.0.0.1 PORT: 54753 
+
+------------------------------------
+09/19/12 15:00:54 : Server started
+09/19/12 15:00:57 : Client Connected | IP: 127.0.0.1 | Port: 40932 
+
+------------------------------------
+09/19/12 15:03:11 : Server started
+09/19/12 15:03:13 : Client Connected | IP: 127.0.0.1 | Port: 43748 
+09/19/12 15:03:55 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 43748 
+09/19/12 15:04:02 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 43748 
+09/19/12 15:04:02 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 43748 
+09/19/12 15:04:02 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 43748 
+
+------------------------------------
+09/19/12 15:05:07 : Server started
+
+------------------------------------
+09/19/12 15:05:08 : Server started
+09/19/12 15:05:10 : Client Connected | IP: 127.0.0.1 | Port: 58084 
+09/19/12 15:05:48 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 58084 
+09/19/12 15:05:52 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 58084 
+
+------------------------------------
+09/19/12 15:13:10 : Server started
+09/19/12 15:13:12 : Client Connected | IP: 127.0.0.1 | Port: 6117 
+09/19/12 15:13:22 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 6117 
+09/19/12 15:13:24 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 6117 
+
+------------------------------------
+09/19/12 15:15:06 : Server started
+09/19/12 15:15:11 : Client Connected | IP: 127.0.0.1 | Port: 17637 
+09/19/12 15:15:49 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 17637 
+09/19/12 15:15:51 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 17637 
+
+------------------------------------
+09/19/12 15:18:08 : Server started
+
+------------------------------------
+09/19/12 15:18:10 : Server started
+09/19/12 15:18:18 : Client Connected | IP: 127.0.0.1 | Port: 25061 
+09/19/12 15:18:29 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 25061 
+09/19/12 15:18:53 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 25061 
+09/19/12 15:19:06 : Client Disconnected | from IP: 127.0.0.1 PORT: 25061 
+
+------------------------------------
+09/19/12 15:19:48 : Server started
+09/19/12 15:19:54 : Client Connected | IP: 127.0.0.1 | Port: 27621 
+09/19/12 15:20:01 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 27621 
+09/19/12 15:20:17 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 27621 
+09/19/12 15:20:53 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 27621 
+09/19/12 15:21:33 : Client Disconnected | from IP: 127.0.0.1 PORT: 27621 
+
+------------------------------------
+09/19/12 15:22:19 : Server started
+09/19/12 15:22:23 : Client Connected | IP: 127.0.0.1 | Port: 31717 
+09/19/12 15:22:33 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 31717 
+09/19/12 15:23:05 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 31717 
+09/19/12 15:24:25 : Client Disconnected | from IP: 127.0.0.1 PORT: 31717 
+
+------------------------------------
+09/19/12 15:24:56 : Server started
+09/19/12 15:25:00 : Client Connected | IP: 127.0.0.1 | Port: 44261 
+09/19/12 15:25:08 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 44261 
+
+------------------------------------
+09/19/12 15:27:19 : Server started
+09/19/12 15:27:22 : Client Connected | IP: 127.0.0.1 | Port: 48357 
+09/19/12 15:27:34 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 48357 
+09/19/12 15:27:59 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 48357 
+
+------------------------------------
+09/19/12 15:29:55 : Server started
+09/19/12 15:29:58 : Client Connected | IP: 127.0.0.1 | Port: 60901 
+09/19/12 15:30:07 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 60901 
+09/19/12 15:30:23 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 60901 
+
+-----------------------------------------------------------
+09/19/12 15:32:24 : Server started
+09/19/12 15:32:28 : Client Connected | IP: 127.0.0.1 | Port: 998 
+09/19/12 15:32:36 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 998 
+
+-----------------------------------------------------------
+09/19/12 15:34:20 : Server started
+09/19/12 15:34:23 : Client Connected | IP: 127.0.0.1 | Port: 9446 
+09/19/12 15:34:32 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 9446 
+09/19/12 15:34:40 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 9446 
+
+-----------------------------------------------------------
+09/19/12 15:36:01 : Server started
+09/19/12 15:36:13 : Client Connected | IP: 127.0.0.1 | Port: 13286 
+09/19/12 15:36:20 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 13286 
+09/19/12 15:36:26 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 13286 
+09/19/12 15:36:49 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 13286 
+09/19/12 15:37:03 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 13286 
+09/19/12 15:37:25 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 13286 
+09/19/12 15:37:32 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 13286 
+09/19/12 15:37:46 : Client Disconnected | from IP: 127.0.0.1 PORT: 13286 
+
+-----------------------------------------------------------
+09/19/12 15:40:15 : Server started
+09/19/12 15:40:18 : Client Connected | IP: 127.0.0.1 | Port: 15334 
+09/19/12 15:40:37 : Client Disconnected | from IP: 127.0.0.1 PORT: 15334 
+
+-----------------------------------------------------------
+09/19/12 15:41:53 : Server started
+09/19/12 15:41:56 : Client Connected | IP: 127.0.0.1 | Port: 16614 
+09/19/12 15:43:19 : Client Disconnected | from IP: 127.0.0.1 PORT: 16614 
+
+-----------------------------------------------------------
+09/19/12 15:43:50 : Server started
+09/19/12 15:43:53 : Client Connected | IP: 127.0.0.1 | Port: 24038 
+
+-----------------------------------------------------------
+09/19/12 15:44:34 : Server started
+09/19/12 15:44:39 : Client Connected | IP: 127.0.0.1 | Port: 27110 
+
+-----------------------------------------------------------
+09/19/12 15:47:29 : Server started
+09/19/12 15:47:34 : Client Connected | IP: 127.0.0.1 | Port: 36838 
+
+-----------------------------------------------------------
+09/19/12 15:49:54 : Server started
+09/19/12 15:49:57 : Client Connected | IP: 127.0.0.1 | Port: 39398 
+09/19/12 15:50:05 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 39398 
+09/19/12 15:50:07 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 39398 
+09/19/12 15:50:29 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 39398 
+09/19/12 15:50:32 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 39398 
+
+-----------------------------------------------------------
+09/19/12 18:07:31 : Server started
+09/19/12 18:07:35 : Client Connected | IP: 127.0.0.1 | Port: 3783 
+09/19/12 18:08:34 : Client Disconnected | from IP: 127.0.0.1 PORT: 3783 
+
+-----------------------------------------------------------
+09/19/12 18:09:16 : Server started
+09/19/12 18:09:18 : Client Connected | IP: 127.0.0.1 | Port: 8647 
+09/19/12 18:09:33 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 8647 
+09/19/12 18:10:11 : Traceroute www.wikipedia.orgute | from IP: 127.0.0.1 PORT: 8647 
+09/19/12 18:10:22 : Traceroute www.apple.com0.net | from IP: 127.0.0.1 PORT: 8647 
+09/19/12 18:10:34 : Client Disconnected | from IP: 127.0.0.1 PORT: 8647 
+
+-----------------------------------------------------------
+09/19/12 18:12:04 : Server started
+09/19/12 18:12:07 : Client Connected | IP: 127.0.0.1 | Port: 13767 
+09/19/12 18:12:36 : Traceroute me | from IP: 127.0.0.1 PORT: 13767 
+
+-----------------------------------------------------------
+09/19/12 18:39:49 : Server started
+09/19/12 18:39:55 : Client Connected | IP: 127.0.0.1 | Port: 25289 
+09/19/12 18:40:03 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 25289 
+09/19/12 18:40:48 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 25289 
+09/19/12 18:41:23 : Client Disconnected | from IP: 127.0.0.1 PORT: 25289 
+
+-----------------------------------------------------------
+09/19/12 18:41:56 : Server started
+09/19/12 18:42:00 : Client Connected | IP: 127.0.0.1 | Port: 31433 
+09/19/12 18:42:29 : Traceroute me | from IP: 127.0.0.1 PORT: 31433 
+
+-----------------------------------------------------------
+09/19/12 18:45:33 : Server started
+09/19/12 18:45:38 : Client Connected | IP: 127.0.0.1 | Port: 56265 
+09/19/12 18:46:05 : Client Disconnected | from IP: 127.0.0.1 PORT: 56265 
+
+-----------------------------------------------------------
+09/19/12 18:47:02 : Server started
+09/19/12 18:47:04 : Client Connected | IP: 127.0.0.1 | Port: 59081 
+09/19/12 18:47:20 : Client Disconnected | from IP: 127.0.0.1 PORT: 59081 
+
+-----------------------------------------------------------
+09/19/12 18:49:46 : Server started
+09/19/12 18:49:57 : Client Connected | IP: 127.0.0.1 | Port: 62153 
+09/19/12 18:50:22 : Strict violated  | Client IP: 127.0.0.1 PORT: 62153 COMMAND: traceroute www.google.com
+09/19/12 18:52:10 : Client Disconnected | from IP: 127.0.0.1 PORT: 62153 
+
+-----------------------------------------------------------
+09/19/12 18:52:40 : Server started
+09/19/12 18:52:44 : Client Connected | IP: 127.0.0.1 | Port: 8650 
+09/19/12 18:53:00 : Client Disconnected | from IP: 127.0.0.1 PORT: 8650 
+
+-----------------------------------------------------------
+09/19/12 18:55:22 : Server started
+09/19/12 18:55:25 : Client Connected | IP: 127.0.0.1 | Port: 11466 
+09/19/12 18:55:40 : Client Disconnected | from IP: 127.0.0.1 PORT: 11466 
+
+-----------------------------------------------------------
+09/19/12 18:56:12 : Server started
+09/19/12 18:56:15 : Client Connected | IP: 127.0.0.1 | Port: 18122 
+09/19/12 18:56:39 : Client Disconnected | from IP: 127.0.0.1 PORT: 18122 
+
+-----------------------------------------------------------
+09/19/12 19:01:21 : Server started
+09/19/12 19:01:24 : Client Connected | IP: 127.0.0.1 | Port: 27338 
+09/19/12 19:01:37 : Traceroute me | from IP: 127.0.0.1 PORT: 27338 
+
+-----------------------------------------------------------
+09/19/12 19:03:25 : Server started
+
+-----------------------------------------------------------
+09/19/12 19:03:38 : Server started
+09/19/12 19:03:41 : Client Connected | IP: 127.0.0.1 | Port: 32458 
+09/19/12 19:03:47 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 32458 
+09/19/12 19:03:58 : Traceroute www.techcrunch.com | from IP: 127.0.0.1 PORT: 32458 
+09/19/12 19:07:02 : Client Connected | IP: 127.0.0.1 | Port: 35786 
+09/19/12 19:07:27 : Traceroute www.soic.indiana.edu | from IP: 127.0.0.1 PORT: 35786 
+09/19/12 19:07:51 : Client Disconnected | from IP: 127.0.0.1 PORT: 35786 
+09/19/12 19:08:21 : Client Connected | IP: 127.0.0.1 | Port: 37834 
+09/19/12 19:08:28 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 37834 
+09/19/12 19:08:31 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 37834 
+09/19/12 19:08:53 : Traceroute www.txt | from IP: 127.0.0.1 PORT: 37834 
+09/19/12 19:09:04 : Traceroute dqdm.we | from IP: 127.0.0.1 PORT: 37834 
+09/19/12 19:09:18 : Client Disconnected | from IP: 127.0.0.1 PORT: 37834 
+
+-----------------------------------------------------------
+09/19/12 19:12:18 : Server started
+09/19/12 19:12:21 : Client Connected | IP: 127.0.0.1 | Port: 44490 
+09/19/12 19:13:36 : Client Disconnected | from IP: 127.0.0.1 PORT: 44490 
+
+-----------------------------------------------------------
+09/19/12 19:17:50 : Server started
+09/19/12 19:17:53 : Client Connected | IP: 127.0.0.1 | Port: 17101 
+
+-----------------------------------------------------------
+09/19/12 19:18:37 : Server started
+09/19/12 19:18:40 : Client Connected | IP: 127.0.0.1 | Port: 28877 
+09/19/12 19:18:50 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 28877 
+09/19/12 19:19:10 : Traceroute dd.txt | from IP: 127.0.0.1 PORT: 28877 
+09/19/12 19:19:35 : Traceroute soic.indiana.eduet | from IP: 127.0.0.1 PORT: 28877 
+
+-----------------------------------------------------------
+09/19/12 19:28:16 : Server started
+09/19/12 19:28:34 : Client Connected | IP: 127.0.0.1 | Port: 3534 
+09/19/12 19:28:55 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 3534 
+09/19/12 19:29:00 : Client Disconnected | from IP: 127.0.0.1 PORT: 3534 
+
+-----------------------------------------------------------
+09/19/12 21:34:28 : Server started
+09/19/12 21:34:36 : Client Connected | IP: 127.0.0.1 | Port: 32960 
+09/19/12 21:34:58 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 32960 
+09/19/12 21:35:02 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 32960 
+09/19/12 21:35:12 : Traceroute me | from IP: 127.0.0.1 PORT: 32960 
+09/19/12 21:36:56 : Client Disconnected | from IP: 127.0.0.1 PORT: 32960 
+
+-----------------------------------------------------------
+09/19/12 21:37:47 : Server started
+09/19/12 21:37:53 : Client Connected | IP: 127.0.0.1 | Port: 41408 
+09/19/12 21:38:10 : Strict violated  | Client IP: 127.0.0.1 PORT: 41408 COMMAND: traceroute www.google.com
+09/19/12 21:38:21 : Traceroute me | from IP: 127.0.0.1 PORT: 41408 
+09/19/12 21:38:31 : Client Connected | IP: 127.0.0.1 | Port: 41664 
+09/19/12 21:38:34 : Maximum connections excceded  | Disconnecting | Client IP: 127.0.0.1 PORT: 41664 
+09/19/12 21:42:15 : Client Disconnected | from IP: 127.0.0.1 PORT: 41408 
+09/19/12 21:42:22 : Client Disconnected | from IP: 127.0.0.1 PORT: 41664 
+
+-----------------------------------------------------------
+09/19/12 21:45:11 : Server started
+09/19/12 21:45:29 : Client Connected | IP: 127.0.0.1 | Port: 50368 
+09/19/12 21:46:26 : Strict violated  | Client IP: 127.0.0.1 PORT: 50368 COMMAND: traceroute www.google.com
+09/19/12 21:46:34 : Traceroute me | from IP: 127.0.0.1 PORT: 50368 
+
+-----------------------------------------------------------
+09/19/12 21:51:01 : Server started
+
+-----------------------------------------------------------
+09/19/12 21:51:17 : Server started
+
+-----------------------------------------------------------
+09/19/12 21:51:38 : Server started
+
+-----------------------------------------------------------
+09/21/12 01:44:27 : Server started
+09/21/12 01:44:50 : Client Connected | IP: 127.0.0.1 | Port: 39140 
+
+-----------------------------------------------------------
+09/21/12 01:50:39 : Server started
+09/21/12 01:50:45 : Client Connected | IP: 127.0.0.1 | Port: 45796 
+
+-----------------------------------------------------------
+09/21/12 01:57:54 : Server started
+09/21/12 01:57:58 : Client Connected | IP: 127.0.0.1 | Port: 33253 
+
+-----------------------------------------------------------
+09/21/12 02:15:37 : Server started
+09/21/12 02:15:42 : Client Connected | IP: 127.0.0.1 | Port: 743 
+
+-----------------------------------------------------------
+09/21/12 02:17:30 : Server started
+09/21/12 02:17:34 : Client Connected | IP: 127.0.0.1 | Port: 4327 
+
+-----------------------------------------------------------
+09/21/12 02:18:54 : Server started
+
+-----------------------------------------------------------
+09/21/12 02:18:59 : Server started
+09/21/12 02:19:02 : Client Connected | IP: 127.0.0.1 | Port: 12263 
+
+-----------------------------------------------------------
+09/21/12 02:21:51 : Server started
+09/21/12 02:21:55 : Client Connected | IP: 127.0.0.1 | Port: 33255 
+
+-----------------------------------------------------------
+09/21/12 02:27:30 : Server started
+
+-----------------------------------------------------------
+09/21/12 02:28:18 : Server started
+09/21/12 02:28:21 : Client Connected | IP: 127.0.0.1 | Port: 59111 
+
+-----------------------------------------------------------
+09/21/12 02:30:47 : Server started
+09/21/12 02:30:52 : Client Connected | IP: 127.0.0.1 | Port: 63975 
+
+-----------------------------------------------------------
+09/21/12 02:46:49 : Server started
+09/21/12 02:46:56 : Client Connected | IP: 127.0.0.1 | Port: 45036 
+
+-----------------------------------------------------------
+09/21/12 02:52:22 : Server started
+09/21/12 02:52:29 : Client Connected | IP: 127.0.0.1 | Port: 57580 
+09/21/12 02:52:54 : Client Connected | IP: 127.0.0.1 | Port: 59116 
+09/21/12 02:53:04 : Traceroute me | from IP: 127.0.0.1 PORT: 59116 
+09/21/12 02:59:56 : Maximum connections excceded  | Disconnecting | Client IP: 127.0.0.1 PORT: 59116 
+09/21/12 02:59:58 : Maximum connections excceded  | Disconnecting | Client IP: 127.0.0.1 PORT: 59116 
+09/21/12 03:00:08 : Maximum connections excceded  | Disconnecting | Client IP: 127.0.0.1 PORT: 59116 
+09/21/12 03:00:11 : Maximum connections excceded  | Disconnecting | Client IP: 127.0.0.1 PORT: 59116 
+
+-----------------------------------------------------------
+09/21/12 03:01:10 : Server started
+09/21/12 03:01:13 : Client Connected | IP: 127.0.0.1 | Port: 33006 
+09/21/12 03:01:18 : Client Connected | IP: 127.0.0.1 | Port: 33262 
+09/21/12 03:01:24 : Strict violated  | Client IP: 127.0.0.1 PORT: 33262 COMMAND: traceroute www.google.com
+09/21/12 03:01:32 : Traceroute me | from IP: 127.0.0.1 PORT: 33262 
+09/21/12 03:01:46 : Client Disconnected | from IP: 127.0.0.1 PORT: 33262 
