@@ -71,7 +71,7 @@ void traceRoute(char *command,int clientSocketDes)
 
 
 
-
+//Countdown to time out and then kill the parent thread
 void *countdown(void *arg)
 {
     
