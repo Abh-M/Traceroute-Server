@@ -34,6 +34,8 @@ typedef struct countdownDetails
     pthread_t parentThread;
     int socketDescriptor;
     time_t startTime;
+    int port_no;
+    char ipAddress[15];
 }countdownParams;
 
 static Socket *sharedInstance = NULL;
@@ -90,7 +92,10 @@ void *countdown(void *arg)
         close(details.socketDescriptor);
         int result = pthread_cancel(details.parentThread);
         if(result==0)
+        {
+            automaticTimeOutLog(details.ipAddress, details.port_no);
             pthread_exit(NULL);
+        }
     }
 
     
@@ -121,6 +126,8 @@ void *countdown(void *arg)
     countdownParams t_params;
     t_params.socketDescriptor = connFD;
     t_params.parentThread = pthread_self();
+    strcpy(t_params.ipAddress, ipaddress);
+    t_params.port_no = details.clientAddress.sin_port;
 
     t_params.startTime = time(NULL);
     pthread_create(&countdownThread, NULL, countdown, &t_params);

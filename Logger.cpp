@@ -105,3 +105,16 @@ void strictviolatedLog(char *ipaddress, int port_no, char *command)
 
     
 }
+
+
+void automaticTimeOutLog(char *ipaddress, int port_no)
+{
+    if(initLogger())
+    {
+        if((fprintf(log, "\n%s : Connection Timeout  | Client IP: %s PORT: %d",getTimeStamp(),ipaddress,port_no)<0))
+            cout<<"Error logging";
+        fclose(log);
+    }
+    
+    
+}

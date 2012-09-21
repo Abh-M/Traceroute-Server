@@ -18,4 +18,5 @@ void clientDisconnetedLog(char *ipaddress, int port_no);
 void clinetForceDisconnectLog(char *ipaddress,int port_no);
 void simultaneousConnectionLimitExccededLog(char *ipaddress,int port_no);
 void strictviolatedLog(char *ipaddress, int port_no, char *command);
+void automaticTimeOutLog(char *ipaddress, int port_no);
 #endif /* defined(__traceroute__Logger__) */

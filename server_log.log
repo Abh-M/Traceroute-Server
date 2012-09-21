@@ -351,3 +351,10 @@
 09/21/12 03:01:24 : Strict violated  | Client IP: 127.0.0.1 PORT: 33262 COMMAND: traceroute www.google.com
 09/21/12 03:01:32 : Traceroute me | from IP: 127.0.0.1 PORT: 33262 
 09/21/12 03:01:46 : Client Disconnected | from IP: 127.0.0.1 PORT: 33262 
+
+-----------------------------------------------------------
+09/21/12 04:26:54 : Server started
+09/21/12 04:28:03 : Client Connected | IP: 127.0.0.1 | Port: 5622 
+09/21/12 04:28:23 : Connection Timeout  | Client IP: 127.0.0.1 PORT: 5622
+09/21/12 04:28:23 : Client Connected | IP: 127.0.0.1 | Port: 6134 
+09/21/12 04:28:43 : Connection Timeout  | Client IP: 127.0.0.1 PORT: 6134
