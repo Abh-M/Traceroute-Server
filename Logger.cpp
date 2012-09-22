@@ -119,3 +119,14 @@ void automaticTimeOutLog(char *ipaddress, int port_no)
     
     
 }
+
+void rateLimitExceededLog(char *ipaddress, int port_no, char *command)
+{
+    if(initLogger())
+    {
+        if((fprintf(log, "\n%s : Rate Limit Exceeded  | Client IP: %s PORT: %d COMMAND: %s",getTimeStamp(),ipaddress,port_no,command)<0))
+            cout<<"Error logging";
+        fclose(log);
+    }
+
+}

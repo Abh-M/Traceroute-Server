@@ -267,9 +267,12 @@ void *countdown(void *arg)
                     
                 }
                 
+                
                 double diffInSec = difftime(time(NULL), startTime);
                 
-                if(numberOfTraceroutes<details.maxRate && diffInSec<=60)
+                
+                
+                if((numberOfTraceroutes+1<=details.maxRate) && (diffInSec<=60))
                 {
                     numberOfTraceroutes++;
                     cout<<"\n Executing "<<numberOfTraceroutes<<"  "<<diffInSec/60<<":"<<(int)diffInSec%60;
@@ -278,14 +281,39 @@ void *countdown(void *arg)
                     traceRoute(tracerouteCommands[index++], connFD);
                     
                 }
-                else{
-                    //Log
-                    numberOfTraceroutes=0;
-                    cout<<"\n Error "<<numberOfTraceroutes<<"  "<<diffInSec/60<<":"<<(int)diffInSec%60;
-                    //Discard subsequent commands
+                else if ((numberOfTraceroutes+1>details.maxRate) && (diffInSec<=60))
+                {
                     totalTracerouteCommands=1;
+                    strcpy(mess, "Rate limit excedded");
+                    sendMessageToClient(mess, connFD);
+                    rateLimitExceededLog(ipaddress, details.clientAddress.sin_port, tracerouteCommands[index]);
+                }
+                else if((numberOfTraceroutes+1>details.maxRate) && (diffInSec>60))
+                {
+                    numberOfTraceroutes=0;
+                    startTime=time(NULL);
+                    cout<<"\n Executing "<<numberOfTraceroutes<<"  "<<diffInSec/60<<":"<<(int)diffInSec%60;
+                    //LOG
+                    simpleTrtLog(ipaddress,cmd->args[0],details.clientAddress.sin_port);
+                    traceRoute(tracerouteCommands[index++], connFD);
+
+                }
+                else if((numberOfTraceroutes+1<=details.maxRate) && (diffInSec>60))
+                {
+                 
+                    numberOfTraceroutes=0;
+                    startTime=time(NULL);
+                    cout<<"\n Executing "<<numberOfTraceroutes<<"  "<<diffInSec/60<<":"<<(int)diffInSec%60;
+                    //LOG
+                    simpleTrtLog(ipaddress,cmd->args[0],details.clientAddress.sin_port);
+                    traceRoute(tracerouteCommands[index++], connFD);
+                }
+                else{
+                    
                 }
 
+            
+            
                 
                 totalTracerouteCommands--;
                                                   

@@ -1,2 +1,5 @@
-traceroute www.soic.indiana.edu
-traceroute www.google.com
+traceroute 127.0.0.1
+traceroute 127.0.0.1
+traceroute 127.0.0.1
+traceroute 127.0.0.1
+traceroute 127.0.0.1
