@@ -19,7 +19,7 @@ int main(int argc, const char * argv[])
     
     Socket *server = Socket::shared();
 
-     if((server->createSocket())==0)
+     if((server->createSocket())>0)
         cout<<"\nError Creating Socket";
     else
         cout<<"\nSocket created";
