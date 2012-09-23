@@ -55,6 +55,7 @@ bool validateTarget(const char* tracerouteParam)
         strcat(nslkpCmd,"nslookup ");
         strcat(nslkpCmd,tracerouteParam);
         int nslookupResult = system(nslkpCmd);
+        free(nslkpCmd);
         return nslookupResult==0;
     }
     
@@ -124,6 +125,8 @@ void *countdown(void *arg)
             automaticTimeOutLog(details.ipAddress, details.port_no);
         
     }
+    
+
     pthread_exit(NULL);
 
     
@@ -142,6 +145,8 @@ void *countdown(void *arg)
     char *ipaddress =new char[15]();
     int isStrictOn = details.isStrictOn;
     ipaddress = inet_ntoa(details.clientAddress.sin_addr);
+    
+    
     //LOG
     clientConnectedLog(ipaddress,details.clientAddress.sin_port);
     time_t startTime = NULL;
@@ -226,76 +231,66 @@ void *countdown(void *arg)
 
 
             }
-            else if((strstr(cmd->args[0],".trt"))!=NULL)
-            {
-                char pathPrefix[1024];
-                strcpy(pathPrefix, "/Users/abhineet/Desktop/traceroute/traceroute/");
-
-                
-                char *filname = strcat(pathPrefix, cmd->args[0]);
-
-                FILE *batchFile = fopen(filname, "r");
-                if(batchFile!=NULL)
-                {
-                    char line[1024];
-                    while (fgets(line, sizeof(line), batchFile)) {
-
-                        Command *c = new Command(line);
-                        
-                        char *command = new char[1024]();
-                        strcat(command, c->command);
-                        strcat(command, " ");
-                        strcat(command, c->args[0]);
-                        tracerouteCommands[totalTracerouteCommands++]=command;
-                    }
-                    fclose(batchFile);
-                }
-                else{
-                    //File does not exist
-                    //Send error message to client
-                    char reply[1024];
-                    strcat(reply, "File not found");
-                    sendMessageToClient(reply, connFD);
-                }
-            }
+            
+            
             else
-            {
-                
-                //normal traceroute
-                char *command = new char[1024]();
-                strcat(command, cmd->command);
-                strcat(command, " ");
-                strcat(command, cmd->args[0]);
-                    if(isStrictOn && (strcmp(cmd->args[0], "me"))!=0)
+                {
+                    
+                    //normal traceroute
+                    
+                    //check if argument is a file
+                    FILE *batchFile = fopen(cmd->args[0], "r");
+                    
+                    //arg[0] contains the value of argument to traceroute.
+                    
+                    if(batchFile!=NULL)
                     {
-                        //LOG
-                        strictviolatedLog(ipaddress, details.clientAddress.sin_port, command);
-                        char mess[1024];
-                        strcpy(mess, "\nCannot traceroute to host other than yourself\n");
-                        sendMessageToClient(mess, connFD);
+                        
+                        char line[1024];
+                        while (fgets(line, sizeof(line), batchFile)) {
+                            
+                            Command *c = new Command(line);
+                            
+                            char *command = new char[1024]();
+                            strcat(command, c->command);
+                            strcat(command, " ");
+                            strcat(command, c->args[0]);
+                            tracerouteCommands[totalTracerouteCommands++]=command;
+                        }
+                        fclose(batchFile);
                     }
                     else
                     {
-                        bool isArgumentValid;
-                        if((strcmp(cmd->args[0], "me"))==0)
-                            isArgumentValid = true;
-                        else
-                            isArgumentValid =  validateTarget(cmd->args[0]);
-                        
-                        if(isArgumentValid==true)
-                        {
-                            cout<<"Valid IP";
-                            tracerouteCommands[totalTracerouteCommands++]=command;
-                        }
-                        else
-                        {
-                            cout<<"Invalid IP";
-                            strcpy(mess, "Invalid parameter to traceroute command.");
-                            sendMessageToClient(mess, connFD);
-                        }
+                        char *command = new char[1024]();
+                        strcat(command, cmd->command);
+                        strcat(command, " ");
 
+                        bool isArgumentValid = validateTarget(cmd->args[0]);
+                        if(isArgumentValid==true)
+                            {
+                                cout<<"Valid IP";
+                                strcat(command, cmd->args[0]);
+                                if(isStrictOn && (strcmp(cmd->args[0], "me"))!=0)
+                                {
+                                    //LOG
+                                    strictviolatedLog(ipaddress, details.clientAddress.sin_port, command);
+                                    char mess[1024];
+                                    strcpy(mess, "\nCannot traceroute to host other than yourself\n");
+                                    sendMessageToClient(mess, connFD);
+                                }
+                                else
+                                    tracerouteCommands[totalTracerouteCommands++]=command;
+                            }
+                        else
+                            {
+                                cout<<"Invalid IP";
+                                strcpy(mess, "Invalid parameter to traceroute command.");
+                                sendMessageToClient(mess, connFD);
+                            }
                     }
-            }
+                    
+                    
+                }
             
              
             int index=0;
@@ -416,6 +411,7 @@ void *countdown(void *arg)
         sendMessageToClient(mess, connFD);
 
         
+        cmd->~Command();
         
     }
     
