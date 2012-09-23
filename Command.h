@@ -15,6 +15,7 @@
 #include "Globals.h"
 #include <arpa/inet.h>
 #include <stdlib.h>
+#include <new>
 using namespace std;
 
 class Command {
@@ -32,8 +33,8 @@ class Command {
     {
         
          //Make copy of orignal command
-         orignal_command = (char*)malloc(1024);
-         command=(char*)malloc(1024);
+        orignal_command = new char[1024]();
+         command=new char[1024]();
         
         for (int i=0,j=0; i<strlen(userInput); i++)
         {
@@ -48,7 +49,7 @@ class Command {
          total_args = 0;
          while( (token =  strtok(NULL,seperator))!=NULL)
          {
-             args[total_args] = (char*)malloc(1024);
+             args[total_args] = new char[1024]();
               args[total_args] = token;
                  total_args++;
 

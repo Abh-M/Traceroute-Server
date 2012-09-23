@@ -19,7 +19,7 @@ char* getTimeStamp()
 
     time_t currTime = time(NULL);
     struct tm *now = localtime(&currTime);
-    char *timeString = (char *)malloc(80);
+    char *timeString = new char[80]();
     strftime(timeString, 80, "%m/%d/%y %H:%M:%S", now);
     return timeString;
 }
@@ -38,13 +38,16 @@ void serverStartedLog()
 {
     if(initLogger())
     {
-        char *logMessage = (char*)malloc(256);
+        char *logMessage = new char[256]();
         strcat(logMessage, SEPERATOR);
-        strcat(logMessage, getTimeStamp());
+        char *timestamp = getTimeStamp();
+        strcat(logMessage,timestamp);
+        free(timestamp);
         strcat(logMessage, " : ");
         strcat(logMessage, "Server started");
         if((fprintf(log, "\n%s",logMessage)<0))
             cout<<"Error logging";
+        free(logMessage);
         fclose(log);
     }
 }
@@ -53,8 +56,10 @@ void clientConnectedLog(char *ipaddress,int port_no)
 {
     if(initLogger())
     {
-        if((fprintf(log, "\n%s : Client Connected | IP: %s | Port: %d ",getTimeStamp(),ipaddress,port_no)<0))
+        char *timestamp = getTimeStamp();
+        if((fprintf(log, "\n%s : Client Connected | IP: %s | Port: %d ",timestamp,ipaddress,port_no)<0))
             cout<<"Error logging";
+                free(timestamp);
         fclose(log);
     }
 }
@@ -62,8 +67,10 @@ void simpleTrtLog(char *ipaddress,char* ipOrhostname, int port_no)
 {
     if(initLogger())
     {
-        if((fprintf(log, "\n%s : Traceroute %s | from IP: %s PORT: %d ",getTimeStamp(),ipOrhostname,ipaddress,port_no)<0))
+        char *timestamp = getTimeStamp();
+        if((fprintf(log, "\n%s : Traceroute %s | from IP: %s PORT: %d ",timestamp,ipOrhostname,ipaddress,port_no)<0))
             cout<<"Error logging";
+        free(timestamp);
         fclose(log);
     }
 
@@ -73,8 +80,10 @@ void clientDisconnetedLog(char *ipaddress, int port_no)
 {
     if(initLogger())
     {
-        if((fprintf(log, "\n%s : Client Disconnected | from IP: %s PORT: %d ",getTimeStamp(),ipaddress,port_no)<0))
+        char *timestamp = getTimeStamp();
+        if((fprintf(log, "\n%s : Client Disconnected | from IP: %s PORT: %d ",timestamp,ipaddress,port_no)<0))
             cout<<"Error logging";
+        free(timestamp);
         fclose(log);
     }
     
@@ -88,8 +97,10 @@ void simultaneousConnectionLimitExccededLog(char *ipaddress,int port_no)
 {
     if(initLogger())
     {
-        if((fprintf(log, "\n%s : Maximum connections excceded  | Disconnecting | Client IP: %s PORT: %d ",getTimeStamp(),ipaddress,port_no)<0))
+        char *timestamp = getTimeStamp();
+        if((fprintf(log, "\n%s : Maximum connections excceded  | Disconnecting | Client IP: %s PORT: %d ",timestamp,ipaddress,port_no)<0))
             cout<<"Error logging";
+        free(timestamp);
         fclose(log);
     }
 
@@ -99,8 +110,11 @@ void strictviolatedLog(char *ipaddress, int port_no, char *command)
 {
     if(initLogger())
     {
-        if((fprintf(log, "\n%s : Strict violated  | Client IP: %s PORT: %d COMMAND: %s",getTimeStamp(),ipaddress,port_no,command)<0))
+           char *timestamp = getTimeStamp();
+        if((fprintf(log, "\n%s : Strict violated  | Client IP: %s PORT: %d COMMAND: %s",timestamp,ipaddress,port_no,command)<0))
             cout<<"Error logging";
+        free(timestamp);
+
         fclose(log);
     }
 
@@ -112,8 +126,11 @@ void automaticTimeOutLog(char *ipaddress, int port_no)
 {
     if(initLogger())
     {
-        if((fprintf(log, "\n%s : Connection Timeout  | Client IP: %s PORT: %d",getTimeStamp(),ipaddress,port_no)<0))
+           char *timestamp = getTimeStamp();
+        if((fprintf(log, "\n%s : Connection Timeout  | Client IP: %s PORT: %d",timestamp,ipaddress,port_no)<0))
             cout<<"Error logging";
+        free(timestamp);
+
         fclose(log);
     }
     
@@ -124,8 +141,11 @@ void rateLimitExceededLog(char *ipaddress, int port_no, char *command)
 {
     if(initLogger())
     {
-        if((fprintf(log, "\n%s : Rate Limit Exceeded  | Client IP: %s PORT: %d COMMAND: %s",getTimeStamp(),ipaddress,port_no,command)<0))
+           char *timestamp = getTimeStamp();
+        if((fprintf(log, "\n%s : Rate Limit Exceeded  | Client IP: %s PORT: %d COMMAND: %s",timestamp,ipaddress,port_no,command)<0))
             cout<<"Error logging";
+        free(timestamp);
+
         fclose(log);
     }
 

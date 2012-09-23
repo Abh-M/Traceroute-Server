@@ -16,6 +16,7 @@
 #include <time.h>
 #include "Logger.h"
 #include <sys/signal.h>
+#include <new>
 
 int remCon=0;
 int maxCon;
@@ -40,6 +41,26 @@ typedef struct countdownDetails
 
 static Socket *sharedInstance = NULL;
 
+bool validateTarget(const char* tracerouteParam)
+{
+    cout<<"Param: ---->"<<tracerouteParam;
+    if((((int)(tracerouteParam[0]))>=48 && ((int)(tracerouteParam[0]))<=57))
+    {
+        struct sockaddr_in sa;
+        int result = inet_pton(AF_INET, tracerouteParam, &(sa.sin_addr));
+        return result==1;
+    }else
+    {
+        char* nslkpCmd = new char[1024]();
+        strcat(nslkpCmd,"nslookup ");
+        strcat(nslkpCmd,tracerouteParam);
+        int nslookupResult = system(nslkpCmd);
+        return nslookupResult==0;
+    }
+    
+    
+}
+
 void sendMessageToClient(char *message,int clientSocketDes)
 {
     char reply[1024];
@@ -48,6 +69,7 @@ void sendMessageToClient(char *message,int clientSocketDes)
     size_t replySize = (size_t)sizeof(reply);
     if((send(clientSocketDes,reply,replySize, 0))==-1)
         cout<<"\nError sending message";
+
         
 }
 
@@ -87,7 +109,7 @@ void *countdown(void *arg)
     if(diff>=TIMEOUT_INTERVAL)
     {
         char mess[1024];
-        strcpy(mess, "Connection Time Out");
+        strcpy(mess, "\nConnection Time Out");
         sendMessageToClient(mess, details.socketDescriptor);
         close(details.socketDescriptor);
         
@@ -117,7 +139,7 @@ void *countdown(void *arg)
     params details = *(params*)arg;
     int connFD = details.connFD;
     int numberOfTraceroutes = 0;
-    char *ipaddress =(char*)malloc(15);
+    char *ipaddress =new char[15]();
     int isStrictOn = details.isStrictOn;
     ipaddress = inet_ntoa(details.clientAddress.sin_addr);
     //LOG
@@ -150,7 +172,10 @@ void *countdown(void *arg)
         cout<<"\n Client "<<connFD<<" : "<<buff;
 
         if(buff==NULL || strlen(buff)<=0){ continue;}
+        
+
         Command *cmd = new Command(buff);
+    
 
         if(strcmp(cmd->command, "help")==0)
         {
@@ -172,7 +197,6 @@ void *countdown(void *arg)
 
             }
          
-            
             //start new timer
             connDetails.startTime = time(NULL);
             pthread_create(&countThread, NULL, countdown, (void*)&connDetails);
@@ -194,11 +218,12 @@ void *countdown(void *arg)
             if(strcmp(cmd->args[0], "me")==0)
             {
                 //This is traceroute me command
-                char *command = (char*)malloc(1024);
+                char *command = new char[1024]();
                 strcat(command, cmd->command);
                 strcat(command, " ");
                 strcat(command, ipaddress);
                 tracerouteCommands[totalTracerouteCommands++]=command;
+
 
             }
             else if((strstr(cmd->args[0],".trt"))!=NULL)
@@ -217,7 +242,7 @@ void *countdown(void *arg)
 
                         Command *c = new Command(line);
                         
-                        char *command = (char*)malloc(1024);
+                        char *command = new char[1024]();
                         strcat(command, c->command);
                         strcat(command, " ");
                         strcat(command, c->args[0]);
@@ -237,24 +262,39 @@ void *countdown(void *arg)
             {
                 
                 //normal traceroute
-                char *command = (char*)malloc(1024);
+                char *command = new char[1024]();
                 strcat(command, cmd->command);
                 strcat(command, " ");
                 strcat(command, cmd->args[0]);
-                if(isStrictOn && (strcmp(cmd->args[0], "me"))!=0)
-                {
-                    //LOG
-                    strictviolatedLog(ipaddress, details.clientAddress.sin_port, command);
-                    char mess[1024];
-                    strcpy(mess, "\nCannot telnet to host other than yourself\n");
-                    sendMessageToClient(mess, connFD);
-                }
-                else
-                    tracerouteCommands[totalTracerouteCommands++]=command;
-                    
+                    if(isStrictOn && (strcmp(cmd->args[0], "me"))!=0)
+                    {
+                        //LOG
+                        strictviolatedLog(ipaddress, details.clientAddress.sin_port, command);
+                        char mess[1024];
+                        strcpy(mess, "\nCannot traceroute to host other than yourself\n");
+                        sendMessageToClient(mess, connFD);
+                    }
+                    else
+                    {
+                        bool isArgumentValid;
+                        if((strcmp(cmd->args[0], "me"))==0)
+                            isArgumentValid = true;
+                        else
+                            isArgumentValid =  validateTarget(cmd->args[0]);
+                        
+                        if(isArgumentValid==true)
+                        {
+                            cout<<"Valid IP";
+                            tracerouteCommands[totalTracerouteCommands++]=command;
+                        }
+                        else
+                        {
+                            cout<<"Invalid IP";
+                            strcpy(mess, "Invalid parameter to traceroute command.");
+                            sendMessageToClient(mess, connFD);
+                        }
 
-
-                
+                    }
             }
             
              
