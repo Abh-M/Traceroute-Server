@@ -32,7 +32,7 @@
 #define SUCCESS 1
 #define FAILURE 0
 
-#define LOG_FILE "/Users/abhineet/Desktop/traceroute/traceroute/server_log.log"
+#define LOG_FILE "server_log.log"
 
 #define SEPERATOR "\n-----------------------------------------------------------\n"
 #define INVALID_COMMAND "\nInvalid Command\n"

@@ -189,7 +189,7 @@ void *countdown(void *arg)
                 cout<<"\n Cannot kill thread";
 
             //Send help file
-            FILE *fp = fopen("/Users/abhineet/Desktop/traceroute/traceroute/help.txt", "r");
+            FILE *fp = fopen("help.txt", "r");
 
             char line[1024];
             //char reply[1024];
@@ -207,7 +207,7 @@ void *countdown(void *arg)
             pthread_create(&countThread, NULL, countdown, (void*)&connDetails);
 
         }
-        else if(strcmp(cmd->command, "traceroute")==0)
+        else if(strcmp(cmd->command, "traceroute")==0 && cmd->total_args==1)
         {
             //kill previous timer
             if((pthread_cancel(countThread))!=0)
