@@ -270,3 +270,149 @@
 09/22/12 23:45:49 : Traceroute hh.def.com | from IP: 127.0.0.1 PORT: 24291 
 09/22/12 23:46:18 : Traceroute h1.co.2313.com | from IP: 127.0.0.1 PORT: 24291 
 09/22/12 23:46:40 : Connection Timeout  | Client IP: 127.0.0.1 PORT: 24291
+
+-----------------------------------------------------------
+09/23/12 15:05:10 : Server started
+09/23/12 15:05:15 : Client Connected | IP: 127.0.0.1 | Port: 22995 
+09/23/12 15:05:30 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 22995 
+09/23/12 15:05:47 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 22995 
+09/23/12 15:06:34 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 22995 
+09/23/12 15:06:57 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 22995 
+09/23/12 15:07:17 : Connection Timeout  | Client IP: 127.0.0.1 PORT: 22995
+
+-----------------------------------------------------------
+09/23/12 18:35:07 : Server started
+09/23/12 18:35:22 : Client Connected | IP: 127.0.0.1 | Port: 51414 
+09/23/12 18:35:42 : Connection Timeout  | Client IP: 127.0.0.1 PORT: 51414
+09/23/12 18:35:52 : Client Connected | IP: 127.0.0.1 | Port: 52950 
+09/23/12 18:36:09 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 52950 
+09/23/12 18:36:49 : Connection Timeout  | Client IP: 127.0.0.1 PORT: 52950
+09/23/12 18:36:51 : Client Connected | IP: 127.0.0.1 | Port: 60630 
+09/23/12 18:37:14 : Connection Timeout  | Client IP: 127.0.0.1 PORT: 60630
+09/23/12 18:37:16 : Client Connected | IP: 127.0.0.1 | Port: 61910 
+09/23/12 18:37:39 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 61910 
+09/23/12 18:38:02 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 61910 
+09/23/12 18:38:18 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 61910 
+09/23/12 18:38:32 : Traceroute www.soic.indiana.edu | from IP: 127.0.0.1 PORT: 61910 
+09/23/12 18:38:41 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 61910 
+09/23/12 18:39:17 : Connection Timeout  | Client IP: 127.0.0.1 PORT: 61910
+
+-----------------------------------------------------------
+09/23/12 18:42:31 : Server started
+
+-----------------------------------------------------------
+09/23/12 18:42:49 : Server started
+09/23/12 18:42:56 : Client Connected | IP: 127.0.0.1 | Port: 2775 
+09/23/12 18:43:19 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 2775 
+09/23/12 18:43:42 : Traceroute me | from IP: 127.0.0.1 PORT: 2775 
+09/23/12 18:44:08 : Traceroute me | from IP: 127.0.0.1 PORT: 2775 
+09/23/12 18:44:20 : Traceroute me | from IP: 127.0.0.1 PORT: 2775 
+09/23/12 18:44:29 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 2775 
+09/23/12 18:45:15 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 2775 
+09/23/12 18:45:38 : Traceroute me | from IP: 127.0.0.1 PORT: 2775 
+09/23/12 18:45:58 : Connection Timeout  | Client IP: 127.0.0.1 PORT: 2775
+
+-----------------------------------------------------------
+09/23/12 18:48:20 : Server started
+09/23/12 18:48:25 : Client Connected | IP: 127.0.0.1 | Port: 15575 
+09/23/12 18:48:33 : Traceroute me | from IP: 127.0.0.1 PORT: 15575 
+09/23/12 18:48:53 : Connection Timeout  | Client IP: 127.0.0.1 PORT: 15575
+09/23/12 18:48:58 : Client Connected | IP: 127.0.0.1 | Port: 16599 
+09/23/12 18:49:02 : Traceroute me | from IP: 127.0.0.1 PORT: 16599 
+09/23/12 18:49:29 : Traceroute me | from IP: 127.0.0.1 PORT: 16599 
+09/23/12 18:49:49 : Connection Timeout  | Client IP: 127.0.0.1 PORT: 16599
+
+-----------------------------------------------------------
+09/23/12 18:57:22 : Server started
+09/23/12 18:57:27 : Client Connected | IP: 127.0.0.1 | Port: 19674 
+09/23/12 18:57:33 : Traceroute me | from IP: 127.0.0.1 PORT: 19674 
+
+-----------------------------------------------------------
+09/23/12 18:58:15 : Server started
+09/23/12 18:58:21 : Client Connected | IP: 127.0.0.1 | Port: 22490 
+09/23/12 18:58:38 : Traceroute me | from IP: 127.0.0.1 PORT: 22490 
+
+-----------------------------------------------------------
+09/23/12 18:59:14 : Server started
+09/23/12 18:59:18 : Client Connected | IP: 127.0.0.1 | Port: 23770 
+09/23/12 18:59:57 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 23770 
+
+-----------------------------------------------------------
+09/23/12 19:01:24 : Server started
+09/23/12 19:01:30 : Client Connected | IP: 127.0.0.1 | Port: 27354 
+09/23/12 19:02:05 : Traceroute me | from IP: 127.0.0.1 PORT: 27354 
+
+-----------------------------------------------------------
+09/23/12 19:02:47 : Server started
+09/23/12 19:02:52 : Client Connected | IP: 127.0.0.1 | Port: 35802 
+09/23/12 19:03:14 : Connection Timeout  | Client IP: 127.0.0.1 PORT: 35802
+
+-----------------------------------------------------------
+09/23/12 19:03:46 : Server started
+09/23/12 19:03:49 : Client Connected | IP: 127.0.0.1 | Port: 40154 
+09/23/12 19:04:21 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 40154 
+
+-----------------------------------------------------------
+09/23/12 19:08:07 : Server started
+09/23/12 19:08:12 : Client Connected | IP: 127.0.0.1 | Port: 64730 
+09/23/12 19:08:22 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 64730 
+09/23/12 19:08:59 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 64730 
+09/23/12 19:09:58 : Traceroute www.soic.indiana.edu | from IP: 127.0.0.1 PORT: 64730 
+09/23/12 19:10:15 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 64730 
+
+-----------------------------------------------------------
+09/23/12 19:14:10 : Server started
+09/23/12 19:14:13 : Client Connected | IP: 127.0.0.1 | Port: 4827 
+09/23/12 19:14:21 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 4827 
+09/23/12 19:14:30 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 4827 
+09/23/12 19:14:44 : Traceroute www.soic.indiana.edu | from IP: 127.0.0.1 PORT: 4827 
+
+-----------------------------------------------------------
+09/23/12 19:15:27 : Server started
+09/23/12 19:15:30 : Client Connected | IP: 127.0.0.1 | Port: 5595 
+09/23/12 19:16:15 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 5595 
+
+-----------------------------------------------------------
+09/23/12 19:21:50 : Server started
+09/23/12 19:21:54 : Client Connected | IP: 127.0.0.1 | Port: 18139 
+09/23/12 19:22:06 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 18139 
+09/23/12 19:22:38 : Traceroute me | from IP: 127.0.0.1 PORT: 18139 
+
+-----------------------------------------------------------
+09/23/12 19:23:36 : Server started
+09/23/12 19:23:43 : Client Connected | IP: 127.0.0.1 | Port: 21723 
+09/23/12 19:23:47 : Traceroute me | from IP: 127.0.0.1 PORT: 21723 
+09/23/12 19:23:54 : Traceroute sample.trt | from IP: 127.0.0.1 PORT: 21723 
+09/23/12 19:24:04 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 21723 
+09/23/12 19:24:09 : Client Connected | IP: 127.0.0.1 | Port: 21979 
+09/23/12 19:24:19 : Traceroute www.googel.com | from IP: 127.0.0.1 PORT: 21979 
+09/23/12 19:24:36 : Client Disconnected | from IP: 127.0.0.1 PORT: 21723 
+09/23/12 19:24:37 : Client Connected | IP: 127.0.0.1 | Port: 22235 
+09/23/12 19:24:42 : Maximum connections excceded  | Disconnecting | Client IP: 127.0.0.1 PORT: 22235 
+
+-----------------------------------------------------------
+09/23/12 19:33:24 : Server started
+
+-----------------------------------------------------------
+09/23/12 19:34:56 : Server started
+09/23/12 19:35:18 : Client Connected | IP: 127.0.0.1 | Port: 37083 
+09/23/12 19:37:50 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 37083 
+09/23/12 19:38:49 : Traceroute www.wikipedia.org | from IP: 127.0.0.1 PORT: 37083 
+
+-----------------------------------------------------------
+09/23/12 19:42:20 : Server started
+09/23/12 19:42:24 : Client Connected | IP: 127.0.0.1 | Port: 50139 
+
+-----------------------------------------------------------
+09/23/12 19:43:19 : Server started
+09/23/12 19:43:21 : Client Connected | IP: 127.0.0.1 | Port: 51419 
+09/23/12 19:43:29 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 51419 
+09/23/12 19:44:04 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 51419 
+09/23/12 19:44:36 : Traceroute me | from IP: 127.0.0.1 PORT: 51419 
+09/23/12 19:45:16 : Traceroute me | from IP: 127.0.0.1 PORT: 51419 
+09/23/12 19:45:27 : Traceroute www.soic.indiana.edu | from IP: 127.0.0.1 PORT: 51419 
+09/23/12 19:46:08 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 51419 
+09/23/12 19:46:20 : Client Connected | IP: 127.0.0.1 | Port: 53723 
+09/23/12 19:46:30 : Traceroute www.google.com | from IP: 127.0.0.1 PORT: 53723 
+09/23/12 19:54:44 : Connection Timeout  | Client IP: 127.0.0.1 PORT: 51419
+09/23/12 19:55:06 : Connection Timeout  | Client IP: 127.0.0.1 PORT: 53723
