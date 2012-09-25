@@ -70,6 +70,7 @@ void sendMessageToClient(char *message,int clientSocketDes)
     size_t replySize = (size_t)sizeof(reply);
     if((send(clientSocketDes,reply,replySize, 0))==-1)
         cout<<"\nError sending message";
+    cout<<"SENT | "<<reply<<endl;
 
         
 }
@@ -189,7 +190,7 @@ void *countdown(void *arg)
                 cout<<"\n Cannot kill thread";
 
             //Send help file
-            FILE *fp = fopen("help.txt", "r");
+            FILE *fp = fopen(HELP_FILE, "r");
 
             char line[1024];
             //char reply[1024];
@@ -364,7 +365,10 @@ void *countdown(void *arg)
         }
         else if(strcmp(cmd->command, "quit")==0)
         {
-            
+            //kill previous timer
+            if((pthread_cancel(countThread))!=0)
+                cout<<"\n Cannot kill thread";
+
             
             //close connection
             strcpy(mess, "terminate");
