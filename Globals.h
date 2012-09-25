@@ -32,7 +32,10 @@
 #define SUCCESS 1
 #define FAILURE 0
 
-#define LOG_FILE "server_log.log"
+
+#define PATH_PREFIX "/Users/abhineet/Desktop/traceroute/traceroute/"
+#define HELP_FILE "/Users/abhineet/Desktop/traceroute/traceroute/help.txt"
+#define LOG_FILE "/Users/abhineet/Desktop/traceroute/traceroute/server_log.log"
 
 #define SEPERATOR "\n-----------------------------------------------------------\n"
 #define INVALID_COMMAND "\nInvalid Command\n"
@@ -48,25 +51,8 @@ typedef enum{
 
 
 
-typedef enum
-{
-    server_start=0,
-    server_stop,
-    
-    traceroute_details,
-    traceroute_too_many_req,
-    traceroute_file,
-    
-    client_connected,
-    client_disconnected,
-    client_terminated,
-    
-    too_many_connections,
-    strict_voilated
-    
-    
-}EVENT;
 
-#define TIMEOUT_INTERVAL 20
+#define TIMEOUT_INTERVAL 40
+#define END_OF_MESSAGE  ""//"kEndofMessage"
 
 #endif
