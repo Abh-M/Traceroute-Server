@@ -34,8 +34,8 @@
 
 
 #define PATH_PREFIX "/Users/abhineet/Desktop/traceroute/traceroute/"
-#define HELP_FILE "/Users/abhineet/Desktop/traceroute/traceroute/help.txt"
-#define LOG_FILE "/Users/abhineet/Desktop/traceroute/traceroute/server_log.log"
+#define HELP_FILE "help.txt"
+#define LOG_FILE "server_log.log"
 
 #define SEPERATOR "\n-----------------------------------------------------------\n"
 #define INVALID_COMMAND "\nInvalid Command\n"
@@ -51,7 +51,7 @@ typedef enum{
 
 
 
-
+#define PROMPT "\n>> "
 #define TIMEOUT_INTERVAL 600
 #define END_OF_MESSAGE  ""//"kEndofMessage"
 

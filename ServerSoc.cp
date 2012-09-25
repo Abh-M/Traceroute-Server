@@ -17,6 +17,9 @@
 #include "Logger.h"
 #include <sys/signal.h>
 #include <new>
+#include <fstream>
+#include <sstream>
+#include <string>
 
 int remCon=0;
 int maxCon;
@@ -70,7 +73,8 @@ void sendMessageToClient(char *message,int clientSocketDes)
     size_t replySize = (size_t)sizeof(reply);
     if((send(clientSocketDes,reply,replySize, 0))==-1)
         cout<<"\nError sending message";
-    cout<<"SENT | "<<reply<<endl;
+     else
+    	cout<<"SENT | "<<reply<<endl;
 
         
 }
@@ -105,7 +109,7 @@ void *countdown(void *arg)
     double diff = difftime(time(NULL), details.startTime);
     while (diff<TIMEOUT_INTERVAL) {
         diff = difftime(time(NULL), details.startTime);
-        cout<<"\n Diff..... "<<diff<<"...."<<details.socketDescriptor;
+        //cout<<"\n Diff..... "<<diff<<"...."<<details.socketDescriptor;
     }
     
     if(diff>=TIMEOUT_INTERVAL)
@@ -153,7 +157,7 @@ void *countdown(void *arg)
     time_t startTime = NULL;
     char mess[1024];
     
-    strcpy(mess, "\n>>> ");
+    strcpy(mess,PROMPT);
     sendMessageToClient(mess, connFD);
     
 
@@ -189,19 +193,41 @@ void *countdown(void *arg)
             if((pthread_cancel(countThread))!=0)
                 cout<<"\n Cannot kill thread";
 
-            //Send help file
+   /*         //Send help file
             FILE *fp = fopen(HELP_FILE, "r");
 
-            char line[1024];
-            //char reply[1024];
-            while (fgets(line, sizeof(line), fp)) {
+            char line[1024];*/
+            
+             ifstream infile;
+            infile.open("help.txt");            
+            string line, message_to_send;
+            
+             if (infile.is_open())
+             {
+				 while (!infile.eof())
+				 {
+					  getline(infile, line);
+					  cout<<"line " <<line<<endl;
+					   
+					  message_to_send = message_to_send + line + "\n";					  
+				 }
+			 }
+			
+			cout<<"message_to_send "<<message_to_send<<endl;
+			
+			strcpy(mess, message_to_send.c_str());
+			sendMessageToClient(mess, connFD);
+            
+            
+            
+            /*while (fgets(line, sizeof(line), fp)) {
                 //cout<<line<<"\n";
                 strcpy(mess, line);
                 strcat(mess, "\n");
                 sendMessageToClient(mess, connFD);
 
 
-            }
+            }*/
          
             //start new timer
             connDetails.startTime = time(NULL);
@@ -411,7 +437,7 @@ void *countdown(void *arg)
         }
 
 
-        strcpy(mess, "\n>>> ");
+        strcpy(mess,PROMPT);
         sendMessageToClient(mess, connFD);
 
         
