@@ -35,7 +35,7 @@ class Command {
          //Make copy of orignal command
         orignal_command = new char[1024]();
          command=new char[1024]();
-        
+        total_args=0;
         for (int i=0,j=0; i<strlen(userInput); i++)
         {
             if(!(iscntrl(userInput[i])))
@@ -45,14 +45,19 @@ class Command {
              
          const char *seperator = " ";
          char *token = strtok(orignal_command, seperator);
-         strcpy(command, token);
-         total_args = 0;
-         while( (token =  strtok(NULL,seperator))!=NULL)
+         if(token!=NULL)
          {
-             args[total_args] = new char[1024]();
-              args[total_args] = token;
+             strcpy(command, token);
+             total_args = 0;
+             while( (token =  strtok(NULL,seperator))!=NULL)
+             {
+                 args[total_args] = new char[1024]();
+                 args[total_args] = token;
                  total_args++;
+                 
+             }
 
+             
          }
     }
 };
