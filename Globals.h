@@ -52,7 +52,7 @@ typedef enum{
 
 
 
-#define TIMEOUT_INTERVAL 40
+#define TIMEOUT_INTERVAL 600
 #define END_OF_MESSAGE  ""//"kEndofMessage"
 
 #endif
