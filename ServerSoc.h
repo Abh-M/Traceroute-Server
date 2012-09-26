@@ -52,6 +52,9 @@ public:
     int maximum_users;
     //this implies how many request by one user in one second
     int reqPerMinPerUser;
+    //to store the time unit for requests
+    int timeUnit;
+    //to store is STRICT is on/off
     int strictDestination;
     
     PROTOCOL_FAMILY protocol;

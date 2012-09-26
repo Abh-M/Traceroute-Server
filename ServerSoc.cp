@@ -28,6 +28,7 @@ sem_t mutex;
 typedef struct connectionDetails {
     int connFD;
     int maxRate;
+    int kTimeUnit;
     int isStrictOn;
     struct sockaddr_in clientAddress;
     
@@ -334,7 +335,7 @@ void *countdown(void *arg)
                 
                 
                 
-                if((numberOfTraceroutes+1<=details.maxRate) && (diffInSec<=60))
+                if((numberOfTraceroutes+1<=details.maxRate) && (diffInSec<=details.kTimeUnit))
                 {
                     numberOfTraceroutes++;
                     cout<<"\n Executing "<<numberOfTraceroutes<<"  "<<diffInSec/60<<":"<<(int)diffInSec%60;
@@ -343,14 +344,14 @@ void *countdown(void *arg)
                     traceRoute(tracerouteCommands[index++], connFD);
                     
                 }
-                else if ((numberOfTraceroutes+1>details.maxRate) && (diffInSec<=60))
+                else if ((numberOfTraceroutes+1>details.maxRate) && (diffInSec<=details.kTimeUnit))
                 {
                     totalTracerouteCommands=1;
                     strcpy(mess, "Rate limit excedded");
                     sendMessageToClient(mess, connFD);
                     rateLimitExceededLog(ipaddress, details.clientAddress.sin_port, tracerouteCommands[index]);
                 }
-                else if((numberOfTraceroutes+1>details.maxRate) && (diffInSec>60))
+                else if((numberOfTraceroutes+1>details.maxRate) && (diffInSec>details.kTimeUnit))
                 {
                     numberOfTraceroutes=0;
                     startTime=time(NULL);
@@ -360,7 +361,7 @@ void *countdown(void *arg)
                     traceRoute(tracerouteCommands[index++], connFD);
 
                 }
-                else if((numberOfTraceroutes+1<=details.maxRate) && (diffInSec>60))
+                else if((numberOfTraceroutes+1<=details.maxRate) && (diffInSec>details.kTimeUnit))
                 {
                  
                     numberOfTraceroutes=0;
@@ -456,6 +457,7 @@ int Socket::createSocket()
     this->portNumber = PORT_NUMBER;
     this->maximum_users = MAX_USERS;
     this->reqPerMinPerUser = REQ_PER_SEC;
+    this->timeUnit = DEFAULT_TIME_UNIT;
     this->strictDestination = STRICT_DEST;
     this->sock_fd = socket(PF_INET, SOCK_STREAM, 0);
     return (this->sock_fd==-1)?NO:YES;
@@ -503,6 +505,7 @@ void Socket::startServerProcess()
 
                 details.connFD = connFD;
                 details.maxRate = this->reqPerMinPerUser;
+                details.kTimeUnit = this->timeUnit;
                 details.clientAddress = tempAddress;
                 details.isStrictOn = this->strictDestination;
                 

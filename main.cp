@@ -42,6 +42,9 @@ int main(int argc, const char * argv[])
                 server->maximum_users = atoi(val);
             else if((strcmp(param, ARG_REQUEST_RATE))==0)
                 server->reqPerMinPerUser = atoi(val);
+            else if((strcmp(param, ARG_REQUEST_RATE_TIME))==0)
+                server->timeUnit = atoi(val);
+
         }
     }
 
